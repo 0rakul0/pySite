@@ -9,9 +9,7 @@ $("document").ready(function () {
             data: JSON.stringify({
                 "peso": peso,
                 "altura": altura
-            }).done(function (data) {
-                $("h1").html("IMC:" + data["resultado"]);
             })
-        });
+        }).done(function (data) { $("h1").html("IMC: " + data["resultado"]) })
     });
 });
