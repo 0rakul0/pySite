@@ -7,3 +7,7 @@
     [x]: # Path: backend/__init__.py
 
     http://0rakul0.pythonanywhere.com/api
+
+# endereço do frontend:
+    
+    https://0rakul0.github.io/pySite/
