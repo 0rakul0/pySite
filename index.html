@@ -1,42 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculo de imc </title>
-</head>
-<body>
-    <form action="" method="post">
-        <fieldset>
-            <legend><h1>calculo de IMC</h1></legend>
-            <label for="peso">peso</label>
-            <input type="text" name="peso" id="inp_peso" placeholder=" peso em (KG)">
-            <label for="altura">altura</label>
-            <input type="text"  name="altura" id="inp_altura" placeholder="altura em M">
-            <button type="submit" value="calcular" id="btn_submit">calcular</button> 
 
-        </fieldset>
-    </form>
-    <script>
-        $("document").ready(function () {
-            $("#btn_submit").click(function () {
-                var peso = parseFloat($("#inp_peso").val());
-                var altura = parseFloat($("#inp_altura").val());
-        
-                $ajax({
-                    url: "https://0rakul0.pythonanywhere.com/api",
-                    method: "POST",
-                    contentType: "application/json",
-                    data: JSON.stringify({
-                        "peso": peso,
-                        "altura": altura
-                    }).done(function (data) {
-                        $("h1").html("IMC: " + data["imc"]);
-                    })
-                })
-            });
-        });
-    </script>
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>calculo de imc </title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+ <form>
+  <fieldset>
+   <legend>
+    <h1>calculo de IMC</h1>
+   </legend>
+
+   <label for="peso">peso</label>
+   <input type="text" name="peso" id="inp_peso" placeholder="peso em (KG)">
+   <label for="altura">altura</label>
+   <input type="text" name="altura" id="inp_altura" placeholder="altura em M">
+   <button type="submit" id="btn_submit">calcular</button>
+
+  </fieldset>
+ </form>
+
+ <div id="resultado"></div>
+ <script src="js/api.js"></script>
 </body>
 </html>
